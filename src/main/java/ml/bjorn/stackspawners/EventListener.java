@@ -22,7 +22,7 @@ public class EventListener implements Listener {
         if (block.getType() == Material.MOB_SPAWNER && event.getBlock().getType() == Material.MOB_SPAWNER) {
             event.setCancelled(true);
             Inventory inv = event.getPlayer().getInventory();
-            ItemStack mainHandItemStack = ((PlayerInventory) inv).getItemInMainHand();
+            ItemStack mainHandItemStack = ((PlayerInventory) inv).getItemInHand();
             mainHandItemStack.setAmount(mainHandItemStack.getAmount() - 1);
 
             manager.add(block.getLocation(), event.getPlayer());
